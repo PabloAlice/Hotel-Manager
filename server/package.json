@@ -4,12 +4,12 @@
   "description": "hotel-manager Server App",
   "main": "app.js",
   "scripts": {
-    "start": "node_modules/.bin/pm2 start ecosystem.json",
+    "start": "pm2 start ecosystem.json",
     "feed": "babel-node ./feed",
-    "stop": "node_modules/.bin/pm2 stop hotel-manager --watch",
-    "remove": "node_modules/.bin/pm2 delete hotel-manager",
+    "stop": "pm2 stop hotel-manager --watch",
+    "remove": "pm2 delete hotel-manager",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "node_modules/.bin/eslint ."
+    "eslint": "eslint --fix ."
   },
   "repository": {
     "type": "git",
