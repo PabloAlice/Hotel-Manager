@@ -1,0 +1,39 @@
+{
+  "name": "hotel-manager-server",
+  "version": "0.1.0",
+  "description": "hotel-manager Server App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node_modules/.bin/pm2 start ecosystem.json",
+    "feed": "babel-node ./feed",
+    "stop": "node_modules/.bin/pm2 stop hotel-manager --watch",
+    "remove": "node_modules/.bin/pm2 delete hotel-manager",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "node_modules/.bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/softsign/hotel-manager"
+  },
+  "author": "Softsign",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.10",
+    "node-fetch": "^1.7.3",
+    "pm2": "^2.10.4",
+    "winston": "^2.4.4"
+  }
+}
