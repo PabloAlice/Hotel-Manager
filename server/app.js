@@ -13,9 +13,12 @@ config()
 setUpLogger()
 setUpDB()
 
+const cors = require('cors')
 const PORT = process.env.PORT
 const app = express()
 
+app.use(cors())
+app.use(express.static('public'))
 app.use(bodyParser.json())
 
 app.use(endpoints.hotels, HotelController)
