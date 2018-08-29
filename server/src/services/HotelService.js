@@ -7,7 +7,7 @@ export async function findHotelById(id) {
 export async function findHotels(filters) {
 	const { stars, name } = filters
 	const filter = {
-		...stars && { stars },
+		...stars && { stars: { $in: stars } },
 		...name && { name },
 	}
 	return Hotel.find(filter).exec()

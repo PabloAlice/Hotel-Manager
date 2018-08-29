@@ -21,7 +21,9 @@ HotelController.get('/:id', wrap(async (req, res) => {
  * Find all hotels
  */
 HotelController.get('/', wrap(async (req, res) => {
-	const hotels = await HotelService.findHotels(req.query)
+  const { stars, name } = req.query
+	const parsedStars = stars && JSON.parse(stars)
+	const hotels = await HotelService.findHotels({stars: parsedStars, name})
 	return res.status(200).json({ hotels })
 }))
 
