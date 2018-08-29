@@ -1,21 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Grid, Col, Row } from 'react-bootstrap'
+import { Provider } from 'react-redux'
+import configureStore from 'model/store'
+
+import Navbar from './features/Navbar'
+import HotelList from './features/HotelList'
+import Filters from './features/Filters'
+import './App.css'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <Provider store={configureStore()}>
+        <div className='app'>
+          <Navbar/>
+          <div className='layout'>
+            <Grid fluid>
+              <Row>
+                <Col md={3}>
+                  <Filters/>
+                </Col>
+                <Col md={9}>
+                  <HotelList/>
+                </Col>
+              </Row>
+            </Grid>
+          </div>
+        </div>
+      </Provider>
+    )
   }
 }
 
-export default App;
+export default App

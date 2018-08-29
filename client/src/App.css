@@ -1,28 +1,41 @@
-.App {
+.layout {
+  height: calc(100vh - 94px);
+}
+
+.app {
+  background-color: rgb(244,244,244);
+}
+
+.navbar {
+  background-color: rgb(30,67,128);
+  height: 70px;
+  padding: 8px 4px;
+  margin-bottom: 24px;
+}
+
+.hotel-price-container {
   text-align: center;
+  padding: 50px 12px;
+  border-left: rgb(236, 236, 236) dashed 2px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.hotel-price {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(211, 110, 28);
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.hotel-price span {
+  vertical-align: middle;
 }
 
-.App-title {
-  font-size: 1.5em;
+.hotel-price-number {
+  font-weight: 700;
+  padding: 8px;
+  font-size: 36px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.hotels-layout {
+  height: calc(100vh - 94px);
+  overflow: auto;
 }
